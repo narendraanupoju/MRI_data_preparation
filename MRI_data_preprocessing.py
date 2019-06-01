@@ -9,7 +9,7 @@ import os
 import nibabel as nib
 import numpy as np
 
-dirName = r"U:\Oasis_dataset\OAS1_0001_MR1" # directory for mri data
+dirName = r"file_path" # directory for mri data
 
 #function to read data from dirName
 def FileRead(file_path):
