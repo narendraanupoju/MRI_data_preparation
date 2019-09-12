@@ -41,6 +41,13 @@ def Nifti2Dto3D(Nifti2D):
     #Nifti3D = np.expand_dims(Nifti3DWOChannel, 3)
     return Nifti3DWOChannel
 
+#normalize data between o-1
+def normalize(x):
+    min_val = np.min(x)
+    max_val = np.max(x)
+    x = (x-min_val) / (max_val-min_val)
+    return x
+
 # to copy data to local storage
 def FileSave(data, file_path):
     nii = nib.Nifti1Image(data, np.eye(4))
