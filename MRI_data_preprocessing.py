@@ -95,4 +95,4 @@ oned_data, twod_data = main()
 #for visualization
 data_vis = Nifti2Dto3D(Nifti1Dto2D(oned_data[0,:], 256))
 #plt.imshow(data_vis[20,:,:], cmap='gray')
-#plt.imshow(data_vis[20,:,:], cmap='gray')
+#plt.imshow(data_vis[:,:,20], cmap='gray')
