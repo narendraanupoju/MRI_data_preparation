@@ -8,6 +8,7 @@ Created on Wed Jan  2 14:10:31 2019
 import os
 import nibabel as nib
 import numpy as np
+import matplotlib.pyplot as plt
 
 dirName = r"file_path" # directory for mri data
 
@@ -91,3 +92,7 @@ def main():
     return oned_data, twod_data
 
 oned_data, twod_data = main()
+#for visualization
+data_vis = Nifti2Dto3D(Nifti1Dto2D(oned_data[0,:], 256))
+#plt.imshow(data_vis[20,:,:], cmap='gray')
+#plt.imshow(data_vis[20,:,:], cmap='gray')
