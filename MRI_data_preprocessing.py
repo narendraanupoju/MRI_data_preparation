@@ -3,6 +3,10 @@
 Created on Wed Jan  2 14:10:31 2019
 
 @author: narendra
+
+This is an example code that operates directly for 256*256*X (X is no of slices) 
+
+An other alternative for main() and getListoFFiles() can be replaced by using glob functions.
 """
 
 import os
@@ -32,7 +36,7 @@ def Nifti2Dto1D(Nifti2D):
     return Nifti1D
 
 #reshapes a 1 dimensional array to 2 dimensional data
-def Nifti1Dto2D(Nifti1D, height):
+def Nifti1Dto2D(Nifti1D, height):     # height represents the height of image to be reconstructed from 1d array
     Nifti2D = Nifti1D.reshape(height,int(np.shape(Nifti1D)[0]/height))
     return Nifti2D
 
@@ -95,4 +99,4 @@ oned_data, twod_data = main()
 #for visualization
 data_vis = Nifti2Dto3D(Nifti1Dto2D(oned_data[0,:], 256))
 #plt.imshow(data_vis[20,:,:], cmap='gray')
-#plt.imshow(data_vis[:,:,20], cmap='gray')
+plt.imshow(data_vis[:,:,20], cmap='gray')
